@@ -39,10 +39,10 @@ void Dijkstra(vector<vector<Edge>>& graph, int source)
         }
     }
 
-    cout << "Êðàò÷àéøèå ðàññòîÿíèÿ îò âåðøèíû " << source << " äî âñåõ îñòàëüíûõ âåðøèí:" << endl;
+    cout << "ÐšÑ€Ð°Ñ‚Ñ‡Ð°Ð¹ÑˆÐ¸Ðµ Ñ€Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ñ Ð¾Ñ‚ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ " << source << " Ð´Ð¾ Ð²ÑÐµÑ… Ð¾ÑÑ‚Ð°Ð»ÑŒÐ½Ñ‹Ñ… Ð²ÐµÑ€ÑˆÐ¸Ð½:" << endl;
     for (int i = 0; i < numVertices; i++) 
     {
-        cout << "Âåðøèíà " << i << ": " << dist[i] << endl;
+        cout << "Ð’ÐµÑ€ÑˆÐ¸Ð½Ð° " << i << ": " << dist[i] << endl;
     }
 }
 
@@ -52,7 +52,7 @@ int main()
     ifstream inputFile("matrix.txt");
     if (!inputFile)
     {
-        cout << "Íå óäàëîñü îòêðûòü ôàéë matrix.txt " << endl;
+        cout << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» matrix.txt " << endl;
         return 1;
     }
 
@@ -61,7 +61,7 @@ int main()
 
     vector<vector<Edge>> graph(numVertices);
 
-    cout << "Ìàòðèöà ñìåæíîñòè ãðàôà:" << endl;
+    cout << "ÐœÐ°Ñ‚Ñ€Ð¸Ñ†Ð° ÑÐ¼ÐµÐ¶Ð½Ð¾ÑÑ‚Ð¸ Ð³Ñ€Ð°Ñ„Ð°:" << endl;
     for (int i = 0; i < numVertices; i++)
     {
         for (int j = 0; j < numVertices; j++) 
@@ -80,7 +80,7 @@ int main()
     inputFile.close();
 
     int source;
-    cout << "Ââåäèòå íà÷àëüíóþ âåðøèíó: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½ÑƒÑŽ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñƒ: ";
     cin >> source;
 
     Dijkstra(graph, source);
