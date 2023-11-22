@@ -9,7 +9,7 @@ int main()
     setlocale(LC_ALL, "RUS");
     ifstream inputFile("matrixPrima.txt");
 
-    int n; // Размерность матрицы
+    int n; 
     inputFile >> n;
 
     int** matrix;
@@ -18,8 +18,6 @@ int main()
     {
         matrix[i] = new int[n];
     }
-
-    // Заполняем матрицу данными из файла
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++) 
@@ -28,23 +26,21 @@ int main()
         }
     }
 
-    // Создаем массив для хранения посещенных/непосещенных вершин
     bool* visited = new bool[n];
     for (int i = 0; i < n; i++) 
     {
         visited[i] = false;
     }
 
-    visited[0] = true; // Начинаем с первой вершины
+    visited[0] = true; 
 
-    int numVisited = 1; // Количество посещенных вершин
-    int totalWeight = 0; // Вес минимального остовного дерева
+    int numVisited = 1; 
+    int totalWeight = 0; 
 
-    // Выводим ребра минимального остовного дерева
     while (numVisited < n) 
     {
-        int minWeight = max_int; // Минимальный вес ребра
-        int from, to; // Номера вершин, соединенных ребром с минимальным весом
+        int minWeight = max_int; 
+        int from, to; 
 
         for (int i = 0; i < n; i++) 
         {
@@ -63,16 +59,14 @@ int main()
         }
 
         
-        cout << "Ребро: " << from << " - " << to << ", Вес: " << minWeight << endl;
+        cout << "Р РµР±СЂРѕ: " << from << " - " << to << ", Р’РµСЃ: " << minWeight << endl;
 
         visited[to] = true;
         numVisited++;
         totalWeight += minWeight;
     }
 
-    cout << "Общий вес минимального остовного дерева: " << totalWeight << endl;
-
-    // Освобождаем память
+    cout << "РћР±С‰РёР№ РІРµСЃ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ РѕСЃС‚РѕРІРЅРѕРіРѕ РґРµСЂРµРІР°: " << totalWeight << endl;
     for (int i = 0; i < n; i++)
     {
         delete[] matrix[i];
